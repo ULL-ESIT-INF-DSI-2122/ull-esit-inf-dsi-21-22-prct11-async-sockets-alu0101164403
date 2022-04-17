@@ -1,11 +1,23 @@
-# **PRÁCTICA X. XXXXX **
-
-Alumno: Ainoa Iglesias Dasilva
-
-email: alu0101164403@ull.edu.es
+# **PRÁCTICA X. XXXX **
 
 Asignatura: Desarrollo de sistemas informáticos
 
 Curso: 3º, 2021/22
+
+Ainoa Iglesias Dasilva, alu0101164403@ull.edu.es
+
+
+<p align="center">
+    <a href="/tests.yml">
+        <img alt="Tests" src="/badge.svg">
+    </a>
+    <a href=''>
+        <img src='' alt='Coverage Status' />
+    </a>
+    <a href=''>
+        <img src='' alt='Sonar cloud status' />
+    </a>
+</p>
+
 
 [GitHubPages]()
