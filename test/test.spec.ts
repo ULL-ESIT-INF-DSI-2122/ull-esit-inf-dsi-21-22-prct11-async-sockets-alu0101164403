@@ -7,7 +7,7 @@ describe('add function test', () => {
     expect(add(1, 8)).to.be.equal(9);
   });
   it('add(-1, 8) returns valur 7', () => {
-    expect(add(1, 8)).to.be.equal(7);
+    expect(add(-1, 8)).to.be.equal(7);
   });
   it('add(1.2, 3.5) returns valur 4.7', () => {
     expect(add(1.2, 3.5)).to.be.equal(4.7);
