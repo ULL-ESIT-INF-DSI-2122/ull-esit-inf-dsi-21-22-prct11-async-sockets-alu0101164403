@@ -44,6 +44,7 @@ yargs.command({
         body: argv.body,
         color: colour,
       };
+      // pasa los datos al servidor
       client.write(JSON.stringify(request) + '\n');
     }
   },

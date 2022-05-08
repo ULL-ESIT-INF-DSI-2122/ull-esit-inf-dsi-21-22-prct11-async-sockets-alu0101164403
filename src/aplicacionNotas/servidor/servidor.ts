@@ -11,12 +11,7 @@ net.createServer((connection) => {
   const server = new EventEmitterServer(connection);
   console.log('Se ha conectado el cliente.');
 
-  server.on('request', (info) => {
-    // incializa tipo response
-    const response: tipos.ResponseType = {
-      type: 'add',
-      success: true,
-    };
+  server.on('data', (info) => {
     // comprobar si esxiste usuario
     const users: ManagementUsers = ManagementUsers.getManagerUser();
 
@@ -28,43 +23,69 @@ net.createServer((connection) => {
       case 'add':
         if (true) {
           const note: Note = new Note(info.title, info.body, info.colour);
-          response.success = management.addNote(note);
+          const success: boolean = management.addNote(note);
+          const response: tipos.ResponseType = {
+            type: 'add',
+            success: success,
+          };
+          connection.write(JSON.stringify(response));
         }
         break;
       case 'remove':
         if (true) {
           const note: Note = newUser.getNote(info.title);
-          response.success = management.removeNote(note);
+          const success: boolean = management.removeNote(note);
+          const response: tipos.ResponseType = {
+            type: 'remove',
+            success: success,
+          };
+          connection.write(JSON.stringify(response));
         }
         break;
       case 'modify':
         if (true) {
-          response.success = management.modifyNote(info.title, info.newTitle, info.body, info.colour);
+          const success: boolean = management.modifyNote(info.title, info.newTitle, info.body, info.colour);
+          const response: tipos.ResponseType = {
+            type: 'modify',
+            success: success,
+          };
+          connection.write(JSON.stringify(response));
         }
         break;
       case 'list':
         if (true) {
-          response.success = management.showTittlesNotes();
+          const success: boolean = management.showTittlesNotes();
+          const response: tipos.ResponseType = {
+            type: 'list',
+            success: success,
+          };
+          connection.write(JSON.stringify(response));
         }
         break;
       case 'read':
         if (true) {
           const note: Note = newUser.getNote(info.title);
-          response.success = management.showNote(note);
+          const success: boolean = management.showNote(note);
+          const response: tipos.ResponseType = {
+            type: 'read',
+            success: success,
+          };
+          connection.write(JSON.stringify(response));
         }
         break;
       default:
         console.log('No introdujo una opcion valida.');
         break;
     }
-  });
 
-  connection.on('close', () => {
-    console.log('Se desconecto el cliente.');
-  });
+    connection.on('close', () => {
+      console.log('Se desconecto el cliente.');
+    });
 
-  connection.on('error', (err) => {
-    console.log(err.message);
+    connection.on('error', (err) => {
+      console.log(err.message);
+    });
+    connection.end();
   });
 }).listen(60300, () => {
   console.log('El servidor esta conectado al puerto 60300.');
