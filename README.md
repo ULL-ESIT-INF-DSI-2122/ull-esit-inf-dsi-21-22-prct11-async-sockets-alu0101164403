@@ -1,4 +1,4 @@
-# **PRÁCTICA X. XXXX **
+# **PRÁCTICA 11. CLIENTE Y SERVIDOR PARA UNA PALICACION DE PROCESAMIENTO DE NOTAS DE TEXTO **
 
 Asignatura: Desarrollo de sistemas informáticos
 

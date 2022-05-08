@@ -17,6 +17,7 @@
     "@types/inquirer": "^8.2.1",
     "@types/lowdb": "^1.0.11",
     "@types/mocha": "^9.1.0",
+    "@types/yargs": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "chai": "^4.3.6",
@@ -32,6 +33,7 @@
   "dependencies": {
     "inquirer": "^8.2.2",
     "lowdb": "^3.0.0",
-    "npm": "^8.7.0"
+    "npm": "^8.7.0",
+    "readline-sync": "^1.4.10"
   }
 }
